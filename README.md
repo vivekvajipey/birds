@@ -6,9 +6,10 @@ A 3D birdwatching game created with Three.js where you can spot, photograph, and
 
 Birdwatcher's Paradise is an immersive 3D exploration game where you can:
 - Search for bird species in a forest environment
-- Use your camera (binoculars) to zoom in on birds
+- Use your binoculars to zoom in on birds with realistic effects
 - Photograph birds to add them to your journal
 - Complete your collection of all bird species
+- Move around freely with WASD/Arrow keys and jump with Space
 
 The game features 6 different bird species, each with unique characteristics, appearances, and behaviors.
 
@@ -39,10 +40,17 @@ This game is built using:
 - Custom polygon-based bird models
 - Procedural geometry for environment objects
 - Tween.js for smooth animations
+- Realistic binocular effects with camera shake and lens vignette
 
 ## Implementation Notes
 
 The birds in this game are created using polyhedra geometry in Three.js, giving them a stylized, low-poly appearance. Each bird species has its own unique model created by combining different geometric shapes.
+
+The binocular view features realistic effects including:
+- Simulated lens vignette and glare
+- Subtle camera shake to simulate handheld binoculars
+- Zoom-in overshoot effect similar to manual lens focus
+- Ambient sound effects for zoom and camera shutter
 
 ## Play Now
 
