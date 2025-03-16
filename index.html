@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birdwatcher's Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1>Birdwatcher's Paradise</h1>
+            <p>Loading game assets...</p>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-ui">
+        <div id="viewfinder" style="display: none;">
+            <div id="viewfinder-overlay"></div>
+            <div class="binocular-lens left">
+                <div class="lens-vignette"></div>
+                <div class="lens-glare"></div>
+            </div>
+            <div class="binocular-lens right">
+                <div class="lens-vignette"></div>
+                <div class="lens-glare"></div>
+            </div>
+            <div id="focus-point"></div>
+            <div class="crosshair-h"></div>
+            <div class="crosshair-v"></div>
+        </div>
+        
+        <div id="flash" style="display: none;"></div>
+        
+        <div id="controls-info">
+            <p>WASD/Arrows: Move</p>
+            <p>Mouse/Trackpad: Look Around</p>
+            <p>Space: Jump</p>
+            <p>Z: Binoculars</p>
+            <p>Click while zoomed: Take Photo</p>
+            <p>J: Toggle Journal</p>
+        </div>
+        
+        <div id="discovery-counter">
+            Birds Discovered: <span id="birds-count">0</span> / 5
+        </div>
+        
+        <div id="message-box"></div>
+        
+        <div id="journal" style="display: none;">
+            <div id="journal-header">
+                <h2>Bird Journal</h2>
+                <button id="close-journal">X</button>
+            </div>
+            <div id="journal-entries"></div>
+        </div>
+    </div>
+
+    <!-- Three.js version check -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded');
+        });
+    </script>
+
+    <!-- Third-party libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script>
+        // Check Three.js loaded correctly
+        console.log('Three.js version: ' + (window.THREE ? THREE.REVISION : 'not loaded'));
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        // Check OrbitControls loaded correctly
+        console.log('OrbitControls loaded: ' + (typeof THREE.OrbitControls !== 'undefined'));
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.6.4/dist/tween.umd.js"></script>
+    <script>
+        // Check TWEEN loaded correctly
+        console.log('TWEEN loaded: ' + (typeof TWEEN !== 'undefined'));
+    </script>
+    
+    <!-- Game scripts -->
+    <script src="js/bird-data.js"></script>
+    <script src="js/bird-models.js"></script>
+    <script src="js/environment.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html> 
